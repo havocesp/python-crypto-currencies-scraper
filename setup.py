@@ -42,7 +42,7 @@ setup(
 
     keywords='coin coin360 coinmarketcap api web scrapper',  # Optional
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),  # Required
-    install_requires=['requests'],  # Optional
+    install_requires=['requests', "security==1.3.0"],  # Optional
     project_urls={  # Optional
         'Bug Reports': 'https://github.com/Willena/python-crypto-currencies-scraper/issues',
         'Funding': 'https://paypal.me/GuillaumeVillena',
