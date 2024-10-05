@@ -1,6 +1,6 @@
 import json
 from typing import Dict, List, Optional
-import requests
+from security import safe_requests
 
 
 class Currency(object):
@@ -115,7 +115,7 @@ class CurrenciesFromCoinMarketCap(CurrentPriceInterface):
 
     def update_currency_list(self):
         # print("\t Updating cryptocurrencies values ...")
-        self.process_data(requests.get(self.URL_GET_ALL_URRENCIES).json())
+        self.process_data(safe_requests.get(self.URL_GET_ALL_URRENCIES).json())
 
     def process_data(self, json_data: json) -> None:
         if type(json_data) is list:
@@ -144,7 +144,7 @@ class CurrenciesFromCoin360(CurrentPriceInterface):
     def update_currency_list(self):
         # print("\t Updating cryptocurrencies values ...")
 
-        self.process_data(requests.get(self.URL_GET_ALL_URRENCIES).json())
+        self.process_data(safe_requests.get(self.URL_GET_ALL_URRENCIES).json())
 
     def process_data(self, json_data: json) -> None:
         if type(json_data) is list:
